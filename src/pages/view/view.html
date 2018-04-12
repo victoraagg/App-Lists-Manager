@@ -1,0 +1,16 @@
+<ion-header color="primary">
+  <ion-navbar>
+    <ion-title>{{list.name}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item (click)="updateItem(i,item)" *ngFor="let item of list.items; let i = index">
+        <ion-icon color="primary" *ngIf="!item.status" ios="ios-close-circle" md="md-close-circle"></ion-icon>
+        <ion-icon color="secondary" *ngIf="item.status" ios="ios-checkmark-circle" md="md-checkmark-circle"></ion-icon>
+        <span>Ítem: {{item.name}}</span>
+    </ion-item>
+  </ion-list>
+  <button ion-button block outline color="danger" (click)="deleteList()">Borrar lista</button>
+</ion-content>

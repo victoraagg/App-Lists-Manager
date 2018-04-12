@@ -7,6 +7,7 @@ import { FinishedPage } from '../pages/finished/finished';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { AddPage } from '../pages/add/add';
+import { ViewPage } from '../pages/view/view';
 
 //Services
 import { ListsService } from '../services/lists.service';
@@ -20,7 +21,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     FinishedPage,
     HomePage,
     TabsPage,
-    AddPage
+    AddPage,
+    ViewPage
   ],
   imports: [
     BrowserModule,
@@ -32,7 +34,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     FinishedPage,
     HomePage,
     TabsPage,
-    AddPage
+    AddPage,
+    ViewPage
   ],
   providers: [
     ListsService,

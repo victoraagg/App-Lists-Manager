@@ -18,7 +18,7 @@
         <ion-label floating>Ítem</ion-label>
         <ion-input [(ngModel)]="nameItem" (keyup.enter)="addItem()" name="nameItem" type="text"></ion-input>
       </ion-item>
-      <button ion-button color="primary" (click)="addItem()" outline block>Guardar</button>
+      <button ion-button color="primary" (click)="addItem()" outline block>Añadir ítem</button>
     </ion-card-content>
   </ion-card>
 
@@ -33,6 +33,6 @@
     </ion-item>
   </ion-list>
 
-  <button (click)="saveList()" ion-button color="primary" block>Agregar</button>
+  <button (click)="saveList()" ion-button color="primary" block>Guardar lista</button>
 
 </ion-content>

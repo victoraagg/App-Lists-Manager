@@ -45,7 +45,7 @@ export class AddPage {
 
     let list = new List(this.nameList);
     list.items = this.items;
-    this._listService.lists.push(list);
+    this._listService.addList(list);
 
     this.navCtrl.pop();
 

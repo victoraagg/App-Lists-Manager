@@ -1,7 +1,7 @@
 export class ListItem {
 
-    name:string
-    status:boolean
+    name:string;
+    status:boolean = false;
     
     constructor() {
 
