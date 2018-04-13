@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { ListsService } from '../../services/lists.service';
+import { ViewPage } from '../view/view';
 
 @Component({
   selector: 'page-finished',
@@ -7,8 +9,12 @@ import { NavController } from 'ionic-angular';
 })
 export class FinishedPage {
 
-  constructor(public navCtrl: NavController) {
+  constructor(private _listService:ListsService, public navCtrl: NavController) {
 
+  }
+
+  viewList(index:number,list){
+    this.navCtrl.push( ViewPage,{index,list} );
   }
 
 }

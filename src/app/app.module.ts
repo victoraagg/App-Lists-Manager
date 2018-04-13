@@ -12,6 +12,9 @@ import { ViewPage } from '../pages/view/view';
 //Services
 import { ListsService } from '../services/lists.service';
 
+//Pipes
+import { CheckStatusListPipe } from '../pipes/checkstatuslist.pipe';
+
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
@@ -22,7 +25,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HomePage,
     TabsPage,
     AddPage,
-    ViewPage
+    ViewPage,
+    CheckStatusListPipe
   ],
   imports: [
     BrowserModule,

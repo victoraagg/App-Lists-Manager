@@ -1,9 +1,28 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Terminados</ion-title>
+    <ion-title>Listas terminadas</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
+
+    <span *ngIf="( _listService.getLists() | checkstatuslist:true ).length === 0">Listado vacío</span>
+
+  <ion-card *ngFor="let item of _listService.getLists() | checkstatuslist:true; let i = index">
+      <ion-card-header (click)="viewList(i,item)" color="secondary">
+        <span>Lista: {{item.name}}</span>
+        <ion-note item-right>{{item.items.length}} ítems</ion-note>
+      </ion-card-header>
+      <ion-list>
+        <ion-item *ngFor="let item of item.items | slice:0:3">
+          <ion-icon color="danger" *ngIf="!item.status" ios="ios-close-circle" md="md-close-circle"></ion-icon>
+          <ion-icon color="secondary" *ngIf="item.status" ios="ios-checkmark-circle" md="md-checkmark-circle"></ion-icon>
+          <span>Ítem: {{item.name}}</span>
+        </ion-item>
+        <ion-item (click)="viewList(i,item)" class="center">
+          <ion-icon *ngIf="item.items.length > 3" ios="ios-add-circle" md="md-add-circle" color="primary"></ion-icon>
+        </ion-item>
+      </ion-list>
+  </ion-card>
 
 </ion-content>

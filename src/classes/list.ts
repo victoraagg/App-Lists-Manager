@@ -3,7 +3,7 @@ import { ListItem } from './list-item'
 export class List {
 
     name:string;
-    status:boolean;
+    status:boolean = false;
     items:ListItem[];
 
     constructor(name:string) {

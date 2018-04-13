@@ -6,7 +6,9 @@
 
 <ion-content padding>
 
-  <ion-card *ngFor="let item of _listService.getLists(); let i = index">
+  <span *ngIf="( _listService.getLists() | checkstatuslist:false ).length === 0">Listado vacío</span>
+
+  <ion-card *ngFor="let item of _listService.getLists() | checkstatuslist:false; let i = index">
       <ion-card-header (click)="viewList(i,item)" color="primary">
         <span>Lista: {{item.name}}</span>
         <ion-note item-right>{{item.items.length}} ítems</ion-note>

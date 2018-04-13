@@ -12,6 +12,7 @@ export class ViewPage {
 
   list:List;
   index:number;
+  allChecked:boolean = true;
 
   constructor( 
     public navCtrl: NavController, 
@@ -26,7 +27,19 @@ export class ViewPage {
   updateItem(index:number, item:ListItem){    
     item.status = !item.status;
     this._listService.lists[this.index].items[index] = item;
+    this.checkAllItems();
     this._listService.storeLists();
+  }
+
+  checkAllItems(){ 
+    let allChecked:boolean = true;   
+    for(let item of this._listService.lists[this.index].items){
+      if(!item.status){
+        allChecked = false;
+        break;
+      }
+    }
+    this._listService.lists[this.index].status = allChecked;
   }
 
   deleteList(){
